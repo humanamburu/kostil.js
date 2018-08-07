@@ -9,7 +9,7 @@ export default function fix (f) {
 }
 
 /**
- * Evaluates code in safe way!
+ * Evaluates code in the safe way!
  * @param {String} code
  */
 export function safeEval (code) {
