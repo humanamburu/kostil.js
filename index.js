@@ -20,3 +20,14 @@ export function safeEval (code) {
         console.error('Script evaluation error! \n', e);
     }
 }
+
+/**
+ * Returns an human-readable and understandable boolean.
+ * Brilliant solution for client-server communications.
+ *
+ * @param {Boolean} boolean
+ * @returns {String}
+ */
+export function makeUnderstandableBoolean (boolean) {
+    return boolean ? 'yes' : 'no';
+}
