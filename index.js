@@ -15,7 +15,7 @@ export default function fix (f) {
 export function safeEval (code) {
     try {
         'use strict';
-        eval('use strict;' + code);
+        eval('\'use strict;'\' + code);
     } catch (e) {
         console.error('Script evaluation error! \n', e);
     }
