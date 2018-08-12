@@ -19,8 +19,8 @@ export default function fix (f) {
 export function callbackotify(f) {
     return (callback, ...args) => {
         f(...args)
-            .then(result => callback(null, result))
-            .catch(err => callback(err, null));
+            .then(res => callback(null, res))
+            .catch(e => callback(e, null));
     };
 }
 
@@ -39,6 +39,14 @@ export function safeEval (code) {
 }
 
 /**
+ * Checks self length to understand is app in prod mode or not
+ * @returns {boolean}
+ */
+export function isProduction () {
+    return isProduction.toString().length < 75;
+}
+
+/**
  * Returns an human-readable and understandable boolean.
  * Brilliant solution for client-server communications.
  *
@@ -47,6 +55,15 @@ export function safeEval (code) {
  */
 export function makeUnderstandableBoolean (boolean) {
     return boolean ? 'yes' : 'no';
+}
+
+/**
+ * Checks is smth enabled or not
+ * @param {Boolean} isDisabled
+ * @returns {boolean}
+ */
+export function isEnabled (isDisabled) {
+    return isDisabled === false;
 }
 
 /**
@@ -71,3 +88,14 @@ export function tryHard (f) {
         }
     }
 }
+
+/**
+ * Helps to debug your code.
+ * Works only in dev mode.
+ */
+export function deb () {
+    if (!isProduction()) {
+        debugger;
+    }
+}
+
