@@ -10,8 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/humanamburu/kostil.js.git"
   },
-  "author": "humanamburu",
-  "license": "ISC",
+  "authors": [
+    {
+      "name": "humanamburu",
+      "email": "humanamburu@gmail.com"
+    },
+    {
+      "name": "shastel",
+      "email": "max@shas.tel"
+    }
+  ],
+  "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/humanamburu/kostil.js/issues"
   },
