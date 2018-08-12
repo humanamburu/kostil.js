@@ -39,14 +39,6 @@ export function safeEval (code) {
 }
 
 /**
- * Checks self length to understand is app in prod mode or not
- * @returns {boolean}
- */
-export function isProduction () {
-    return isProduction.toString().length < 75;
-}
-
-/**
  * Returns an human-readable and understandable boolean.
  * Brilliant solution for client-server communications.
  *
@@ -55,6 +47,20 @@ export function isProduction () {
  */
 export function makeUnderstandableBoolean (boolean) {
     return boolean ? 'yes' : 'no';
+}
+
+/**
+ * Tries to call THE FUNCTION HARDER!1
+ * @param f
+ */
+export function tryHard (f) {
+    while (true) {
+        try {
+            return f();
+        } catch (e) {
+            console.log('Try harder!');
+        }
+    }
 }
 
 /**
@@ -76,17 +82,11 @@ export function submitForm (form, button) {
 }
 
 /**
- * Tries to call THE FUNCTION HARDER!1
- * @param f
+ * Checks self length to understand is app in prod mode or not
+ * @returns {boolean}
  */
-export function tryHard (f) {
-    while (true) {
-        try {
-            return f();
-        } catch (e) {
-            console.log('Try harder!');
-        }
-    }
+export function isProduction () {
+    return isProduction.toString().length < 75;
 }
 
 /**
