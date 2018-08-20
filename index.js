@@ -80,9 +80,22 @@ export function isEnabled (isDisabled) {
  */
 export function submitForm (form, button) {
     return button.addEventListener('click', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         form.submit()
     });
+}
+
+/**
+ * Parses string as JSON or don't
+ * @param {String} jsonOrNot
+ * @credits @subzey
+ */
+export function parseJSONorNot(jsonOrNot) {
+  try {
+    return JSON.parse(jsonOrNot);
+  } catch (e) {
+    return jsonOrNot;
+  }
 }
 
 /**
@@ -102,4 +115,3 @@ export function deb () {
         debugger;
     }
 }
-
