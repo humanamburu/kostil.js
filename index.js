@@ -30,6 +30,7 @@ export function callbackotify(f) {
  * @param {String} code
  */
 export function safeEval (code) {
+    'use strict';
     try {
         'use strict';
         eval('\'use strict;\'' + code);
@@ -78,7 +79,10 @@ export function isEnabled (isDisabled) {
  * @param button
  */
 export function submitForm (form, button) {
-    return button.addEventListener('click', () => form.submit());
+    return button.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        form.submit()
+    });
 }
 
 /**
