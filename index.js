@@ -17,7 +17,8 @@ export default function fix (f) {
  * @returns {Function}
  */
 export function callbackotify(f) {
-    return (callback, ...args) => {
+    return (...args) => {
+        const callback = args.pop();
         f(...args)
             .then(res => callback(null, res))
             .catch(e => callback(e, null));
