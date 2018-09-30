@@ -99,6 +99,21 @@ export function parseJSONorNot(jsonOrNot) {
   }
 }
 
+
+/**
+ * Chain second argument to promise, if first arg is Promise,
+ * otherwise pass fisrt argument to second.
+ * @param {Object} maybePromise
+ * @param {Function} cb
+ */
+export function handleIfPromise(maybePromise, cb) {
+    if (maybePromise instanceof Promise ) {
+        return maybePromise.then(cb);
+    }
+
+    return cb(maybePromise);
+}
+
 /**
  * Checks self length to understand is app in prod mode or not
  * @returns {boolean}
