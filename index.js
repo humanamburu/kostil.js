@@ -131,3 +131,14 @@ export function deb () {
         debugger;
     }
 }
+
+/**
+ * Detect availability of ES6 in browser
+ */
+export function isES6available() {
+    try {
+        return eval('(() => true)()');
+    } catch (e) {
+        return false;
+    }
+}
