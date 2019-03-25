@@ -142,3 +142,17 @@ export function isES6available() {
         return false;
     }
 }
+
+/**
+ * Invoke cb each time when devtools opened
+ */
+
+export function onDevtools(cb) {
+    const test = /./;
+    
+    test.toString = function() {
+        cb();
+    }
+    
+    console.log('%s', test);
+}
