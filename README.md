@@ -4,8 +4,6 @@ It's like lodash but for the next level of JS code.
 
 ## API
 
-Release 1.0.0 :boom:
-
 ```javascript
 /**
  * Applies async magic to handle almost any shit in your code.
