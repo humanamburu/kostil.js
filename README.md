@@ -86,7 +86,6 @@ isProduction();
  * Works only in dev mode.
  */
 deb ();
-}
 
 /**
  * Detect availability of ES6 in browser
